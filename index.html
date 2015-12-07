@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>test javarscript</title>
+        <meta charset="UTF-8">
+        <script src="script.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <h2>Bài 1 :a<sup>2</sup></h2>
+
+        <input id="bai1" type="text" value="" placeholder="Số cần tính">
+        <button type="button" onclick="bai1()">Kết quả</button>
+        <p id="dsb1"></p>
+        <script>
+            function bai1() {
+                var a = document.getElementById('bai1').value;
+                if (!isNaN(a)) {
+                    document.getElementById("dsb1").innerHTML = "Kết quả là : " + a + "<sup>2</sup>" + " " + "=" + " " + a * a;
+                } else {
+                    document.getElementById("dsb1").innerHTML = "Vui lòng nhập số";
+                }
+            }
+        </script>
+
+        <h2>Bài 2 : (3a + 2b - c)<sup>2</sup></h2>
+
+        <input id="bai2a" type="text" value="" placeholder="Giá trị của a">
+        <input id="bai2b" type="text" value="" placeholder="Giá trị của b">
+        <input id="bai2c" type="text" value="" placeholder="Giá trị của c">
+        <button type="button" onclick="bai2()">Kết quả</button>
+        <p id="pt"></p>
+        <p id="dsb2"></p>
+        <script>
+            function bai2() {
+                var a = document.getElementById('bai2a').value;
+                var b = document.getElementById('bai2b').value;
+                var c = document.getElementById('bai2c').value;
+                var pt = "(3*" + a + "+" + "2*" + b + "-" + c + ")<sup>2</sup>";
+                if (!isNaN(a) && !isNaN(b) && !isNaN(c)) {
+                    var d = 3 * a + 2 * b - c;
+                    document.getElementById("pt").innerHTML = "Phương trình cần tính là: " + pt;
+                    document.getElementById("dsb2").innerHTML = "Kết quả là :" + " " + d * d;
+                } else {
+                    document.getElementById("dsb2").innerHTML = "Vui lòng nhập số";
+                }
+            }
+        </script>
+
+        <h2>Bài 3 : Cắt chuỗi</h2>
+
+        <input id="bai3" type="text" value="" placeholder="Nhập chuỗi">
+        <button type="button" onclick="bai3()">Kết quả</button>
+        <p id="cut"></p>
+        <script>
+
+            function bai3() {
+                var a = document.getElementById('bai3').value;
+                var cut = a.substring(0, 5);
+                document.getElementById("cut").innerHTML = "Chuỗi sau khi cắt lấy 5 giá trị đầu tiên : " + cut + "...";
+            }
+
+        </script>
+
+        <h2>Bài 4 : </h2>
+
+        <input id="bai4" type="text" value="" placeholder="Nhập từ cần viết hoa">
+        <button type="button" onclick="bai4()">Kết quả</button>
+        <p id="uppercase"></p>
+
+        <script>
+
+            function bai4() {
+                var a = document.getElementById('bai4').value;
+                document.getElementById("uppercase").innerHTML = a;
+                document.getElementById("uppercase").style.textTransform = "capitalize";
+            }
+
+        </script>
+
+        <h2>Bài 5 : Tìm giá trị nhỏ nhất trong dãy số</h2>
+
+        <button onclick="bai5()">Tìm</button>
+
+        <p id="GTNN"></p>
+
+        <script>
+            var dayso = [40, 100, 1, 5, 25, 10];
+            document.getElementById("GTNN").innerHTML = dayso;
+
+            function bai5() {
+                dayso.sort(function (a, b) {
+                    return a - b;
+                });
+                document.getElementById("GTNN").innerHTML = "Giá trị nhỏ nhất trong dãy là : " + dayso[0];
+                ;
+            }
+        </script>
+
+        <h2>Bài 6 : Sắp xếp tên</h2>
+
+        <button onclick="bai6()">Sắp xếp</button>
+
+        <p id="atob"></p>
+
+        <script>
+            var names = ["Tý", "Sơn", "Anh", "Hương", "Tuấn"];
+            document.getElementById("atob").innerHTML = names;
+
+            function bai6() {
+                names.sort();
+                document.getElementById("atob").innerHTML = "Thứ tự sau khi sắp xếp là : " + names;
+                ;
+            }
+        </script>
+
+        <h2>Bài 7 :</h2>
+
+        <script>
+
+            var teacher = {
+                firstName: "Kim",
+                lastName: "Dung",
+                age: 35,
+                say: function () {
+                    return '';
+                }
+            }
+
+            var aboutMe = function () {
+                return 'Xin chào, tôi là ' + teacher.firstName + ' ' + teacher.lastName + '. Năm nay tôi ' + teacher.age + ' tuổi.' + '<br/>';
+            }
+
+            teacher.say = aboutMe;
+
+            document.write(teacher.say());
+
+            var student = {
+                firstName: "Kim",
+                lastName: "Trâm",
+                age: 6,
+                say: function () {
+                    return '';
+                }
+            }
+
+            var aboutMe = function () {
+                return 'Xin chào, tôi là' + student.firstName + ' ' + student.lastName + '. Năm nay tôi ' + student.age + ' tuổi.' + '<br/>';
+            }
+
+            student.say = aboutMe;
+
+            document.write(student.say());
+
+            var parent = {
+                firstName: "Kim",
+                lastName: "Tiêm",
+                age: 25,
+                say: function () {
+                    return '';
+                }
+            }
+
+            var aboutMe = function () {
+                return 'Xin chào, tôi là' + parent.firstName + ' ' + parent.lastName + '. Năm nay tôi ' + parent.age + ' tuổi.' + '<br/>';
+            }
+
+            parent.say = aboutMe;
+
+            document.write(parent.say());
+
+        </script>
+    </body>
+</html>
