@@ -7,25 +7,48 @@ img {
     text-transform: uppercase;
     font-weight: bold;
     color: #bababa;
+    margin: 50px;
+    font-size: 50px; 
+}
+
+.menu {
+    padding: 0;
 }
 
 .header ul {
     list-style: none;
     width: 100%;
     padding: 0;
-    background: #EFEFEF;
     float: left;
     text-align: center;
-    height: 50px;
-    line-height: 50px;
+    height: 80px;
+    line-height: 80px;
     font-size: 20px;
     text-transform: capitalize;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 .header ul li {
     width: 25%;
     float: left;
+    background: #EFEFEF;
+}
+
+.header ul li a {
+    display: block;
+    text-decoration: none;
+}
+
+.header ul li:hover {
+    background: #BFBFBF;
+}
+
+.header ul li:hover > a {
+    color: #FFF;
+}
+
+.post {
+    margin-bottom: 20px;
 }
 
 .tittle-post {
@@ -52,5 +75,12 @@ img {
 
 .footer .layer {
     text-align: center;
-    padding-top: 50px;
+    padding: 0 50px;
+    margin: 50px 0;
+    
+}
+
+.footer .layer:nth-child(2) {
+    border-left: 2px solid #EEE;
+    border-right: 2px solid #EEE;
 }
